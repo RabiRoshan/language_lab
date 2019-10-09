@@ -7,13 +7,14 @@
 #include<string.h>
 
 int i = 0;
+int invalid = 0;
 %}
 
 %%
 (aa)([a+b])*(bb)	{i = 1;}
-.   {i = 0;}
+.   {i = 0;invalid=1;}
 
-"\n" {if(i==1)printf("valid\n"); if(i==0)printf("invalid\n"); i=0;}
+"\n" {if(i==1 && invalid == 0)printf("\nvalid\n"); if(i==0 || invalid ==1)printf("\ninvalid\n"); i=0;invalid=0;}
 %%
 
 int main(){
