@@ -21,7 +21,7 @@ int statements=0, identifiers=0, assignment_o=0, relational_o=0, keywords=0, int
 \=?    assignment_o++; 
 \=/\=   {relational_o++;assignment_o--;}  
 [\<\>]    {relational_o++;}
-\!/\=  {relational_o++;; assignment_o--;}
+\!/\=  {relational_o++; assignment_o--;}
 [0-9]  {integers++;}
 ([a-zA-Z][0-9])+|[a-zA-Z]*  {identifiers++;}
 .   {totalChar++;}
