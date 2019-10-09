@@ -460,7 +460,8 @@ char *yytext;
 #include<string.h>
 
 int i = 0;
-#line 464 "lex.yy.c"
+int invalid = 0;
+#line 465 "lex.yy.c"
 
 #define INITIAL 0
 
@@ -642,9 +643,9 @@ YY_DECL
 	register char *yy_cp, *yy_bp;
 	register int yy_act;
     
-#line 12 "program2.lex"
+#line 13 "program2.lex"
 
-#line 648 "lex.yy.c"
+#line 649 "lex.yy.c"
 
 	if ( !(yy_init) )
 		{
@@ -729,26 +730,26 @@ do_action:	/* This label is used only to access EOF actions. */
 
 case 1:
 YY_RULE_SETUP
-#line 13 "program2.lex"
+#line 14 "program2.lex"
 {i = 1;}
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
-#line 14 "program2.lex"
-{i = 0;}
+#line 15 "program2.lex"
+{i = 0;invalid=1;}
 	YY_BREAK
 case 3:
 /* rule 3 can match eol */
 YY_RULE_SETUP
-#line 16 "program2.lex"
-{if(i==1)printf("\nvalid\n"); if(i==0)printf("\ninvalid\n"); i=0;}
+#line 17 "program2.lex"
+{if(i==1 && invalid == 0)printf("\nvalid\n"); if(i==0 || invalid ==1)printf("\ninvalid\n"); i=0;invalid=0;}
 	YY_BREAK
 case 4:
 YY_RULE_SETUP
-#line 17 "program2.lex"
+#line 18 "program2.lex"
 ECHO;
 	YY_BREAK
-#line 752 "lex.yy.c"
+#line 753 "lex.yy.c"
 case YY_STATE_EOF(INITIAL):
 	yyterminate();
 
@@ -1745,7 +1746,7 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 17 "program2.lex"
+#line 18 "program2.lex"
 
 
 
