@@ -1,3 +1,7 @@
+// Rabi Roshan
+// CSB S7
+// 12170054
+
 #include <stdio.h>
 
 #define TOTAL_STATES 4

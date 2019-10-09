@@ -1,3 +1,7 @@
+// Rabi Roshan
+// CSB S7
+// 12170054
+
 #include <stdio.h>
 #include <string.h>
 void main()
