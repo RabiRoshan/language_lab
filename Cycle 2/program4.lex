@@ -9,6 +9,8 @@
 // gcc lex.yy.c
 // ./a.out
 
+// INFO: Not a perfect solution! ✌🏻😉
+
 #include<stdio.h>
 int statements=0, identifiers=0, assignment_o=0, relational_o=0, keywords=0, integers=0, totalChar = 0;
 %}
